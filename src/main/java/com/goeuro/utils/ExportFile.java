@@ -31,6 +31,10 @@ public class ExportFile {
 			
 	        String filePath = ConfigurationUtil.getInstance().getWsProperty(GENERATED_FILE_PROPERTY);
 	        
+	        File dir = new File(filePath);
+	        if(!dir.exists()){
+	        	dir.mkdir();
+	        }
 	        File tempFile = new File(filePath+fileName+FILE_EXTENTION);
 	        
 	        FileOutputStream tempFileOutputStream = new FileOutputStream(tempFile);
